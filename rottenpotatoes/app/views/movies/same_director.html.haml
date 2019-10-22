@@ -1,0 +1,21 @@
+%h1 Similar Movies
+
+%table#movies
+    %thread
+        %tr
+            %th Movie Title
+            %th Rating
+            %th Director
+            %th Released date
+            %th More Info
+            
+    %tbody
+    - @movies.each do |movie|
+        %tr
+            %th= movie.title
+            %th= movie.rating
+            %th= movie.director
+            %th= movie.release_date
+            %th= link_to "More about #{movie.title}", movie_path(movie)
+
+= link_to 'All Movies', movie_path
